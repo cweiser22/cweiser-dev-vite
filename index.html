@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en"  x-data :class="($store.darkMode ? 'dark' : '' )">
+  <head>
+    <title>Cooper Weiser | Full-Stack Engineer</title>
+    <meta name="description" content="Personal page for Cooper Weiser, a full-stack engineer/software engineer
+based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Cooper Weiser | Full-Stack Engineer">
+    <meta property="og:description" content="Personal page for Cooper Weiser, a full-stack engineer.">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4CZ160CZRR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-4CZ160CZRR');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&family=VT323&display=swap" rel="stylesheet">
+
+  </head>
+  <body class="dark:bg-gray-900 dark:text-white">
+  <main x-data class="flex flex-col container mx-auto max-w-xl space-y-4 p-8">
+    <button x-data @click="$store.darkMode = ! $store.darkMode" class="btn">
+      <strong x-text="$store.darkMode ? 'Dark' : 'Light'"></strong>
+    </button>
+
+    <section>
+      <h1 class="text-xl font-bold">Cooper Weiser</h1>
+      <h3 class="text-lg font-semibold text-muted-foreground dark:text-cyan-500 text-cyan-600">Calabasas, CA</h3>
+    </section>
+    <section>
+      <p class="text-sm">Welcome to my personal site! This is a where I put any important information about myself,
+        my skills, or my interests that doesn't really fit in well on my LinkedIn or resume.</p>
+    </section>
+
+    <section class="space-y-2">
+      <h2 class="text-xl font-bold">About Me</h2>
+      <p class="text-sm">I grew up in Los Angeles, and have been interested in technology basically my entire life.
+        I first learned how to program when I was 13 years old, starting out with simple toy programs and
+        eventually gravitated towards web development. For the last few years, I've been working as a professional
+        software engineer, primarily at fast-paced startups. In my spare time, I enjoy cooking and baking, and
+        I'm working on gradually getting all my goto recipes up on this site. I currently live in Calabasas, just
+        outside Los Angeles.</p>
+      </p>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-bold">My Technical Background In-Depth</h2>
+      <p class="text-sm">
+        I've worked with a wide variety of languages, libraries and frameworks over the past so many years. The
+        lion's share of my past work experience has been in full-stack engineering, but I've also dabbled in
+        mobile development, desktop app development, systems programming and blockchains.
+      </p>
+
+      <h3 class="text-lg font-semibold">Programming Languages</h3>
+      <p class="text-sm">
+        Python, Go, and JS/TS are by far my most used programming languages, but I'm also skilled with a few other
+        languages. While I've yet to substantially adopt it for my personal projects, I'm extremely interested in the Elixir/Erlang/OTP
+        ecosystem, and have a lot of respect for functional programming (though it's not always the most practical
+        paradigm for web development). I'm also a big fan of Rust, and have been gradually adopting it as my primary
+        language for systems programming.
+      </p>
+
+      <h3 class="text-lg font-semibold">Web Development</h3>
+      <p class="text-sm">
+        I've done a great deal of API development, and can confidently say that I know Django REST Framework
+        and FastAPI like the back of my hand. I have worked with nearly every major package in the Django ecosystem,
+        and have been using FastAPI professionally since the framework first rose to prominence. I also use Golang's
+        standard library extensively for backend projects, although I tend to add a few libraries I'm very fond of
+        (particularly <code class="">github.com/jmoiron/sqlx</code> and <code>github.com/go-chi/chi</code>). In the
+        past, I've also used Node.js frameworks, particularly Express.js and Nest.js.
+      </p>
+
+      <p class="text-sm">
+        While I lean more to the backend, I still do a pretty substantial amount of frontend work. My strongest
+        frontend framework is by far React, and I almost always use TypeScript for React projects that aren't trivial.
+        Currently, my preferred frontend stack is React + ShadCN + TypeScript + TanStack Query + Tanstack Router + Zustand
+        (if global state is needed). I've also shipped code in other frameworks, including a visual data dashboard
+        application with Angular and SyncFusion, a real-time Google Docs-style editor in Vue.js with Quasar, and this website,
+        which uses Alpine.js.
+      </p>
+
+      <h3 class="text-lg font-semibold">AI Integration</h3>
+      <p class="text-sm">
+        I've shipped several AI applications, including RAG chatbots, AI webscrapers, and AI-assisted
+        text
+
+      <h3 class="text-lg font-semibold">Infrastructure</h3>
+      <p class="text-sm">
+        In terms of databases, I'm generally biased in favor of relational databases, and have deep experience with
+        both MySQL and PostgreSQL. I usually choose PostgreSQL for new projects unless I have a compelling
+        reason not to, and opt for MongoDB for those edge cases where I legitimately need the flexibility
+        of a document store. Redis/Valkey is my preferred cache/KV store due to its simplicity, performance,
+        and built-in features for horizontal scaling, data streams, and geographic data. Furthermore, I've worked
+        on a few projects that involved embedded databases, specifically BoltDB and SQLite.
+      </p>
+
+      <h3 class="text-lg font-semibold">DevOps</h3>
+      <p class="text-sm">
+        I'm moderately comfortable handling DevOps, and consider myself an expert on Docker. Nearly every application
+        I've deployed in the last few years has been containerized. I've written advanced CI/CD pipelines to handle
+        server deployments, desktop application builds, and package signing. I've been using Linux since I was
+        in high school, and went through the stereotypical distro-hopping phase in my sophomore year. I've written
+        and deployed systemd services on several production Linux servers (mostly targeting Ubuntu, Debian, and RHEL),
+        and have set up build pipelines to create .rpm and .deb packages.
+      </p>
+    </section>
+    <section>
+      <h2 class="text-xl font-bold">Links</h2>
+      <ul class="list-disc space-y-1 pl-8 text-sm">
+        <li class="underline"><a class="dark:text-cyan-500 text-cyan-600" href="https://linkedin.com/in/cweiser">LinkedIn</a></li>
+        <li class="underline"><a class="dark:text-cyan-500 text-cyan-600" href="https://github.com/cweiser22">Github</a></li>
+      </ul>
+    </section>
+    <section class="divide-y" x-data="{ experience: [
+        { title: 'Bacon Unlimited', dateRange: 'Nov 2022 - Dec 2024' },
+        { title: 'Data Crunch Corp', dateRange: 'Dec 2021 - Jun 2022' },
+        { title: 'Freelance', dateRange: 'Feb 2020 - Jan 2022' },
+    ]}">
+      <h2 class="text-xl font-bold my-2">Experience</h2>
+      <template x-for="e in experience" :key="e.title">
+        <div class="flex w-full justify-between items-center p-2 text-sm">
+          <h4 x-text="e.dateRange"></h4>
+
+          <h3 class="font-semibold text-left w-52" x-text="e.title"></h3>
+
+        </div>
+      </template>
+    </section>
+    <section x-data="recipes()" class="w-full">
+      <h3 class="text-xl font-bold my-2">Recipes</h3>
+      <template x-for="r in recipes" :key="r.title">
+        <div x-data="{ open: null }" class="w-full space-y-2">
+          <!-- Accordion Item 1 -->
+          <div class="">
+            <button
+                    @click="open === 1 ? open = null : open = 1"
+                    class="w-full flex justify-between items-center py-2 text-left"
+            >
+              <span x-text="r.title"></span>
+              <svg :class="{ 'rotate-180': open === 1 }" class="w-4 h-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div x-show="open === 1" x-collapse class="px-4 py-2 ">
+              <h3 class="text-lg font-semibold">Ingredients</h3>
+              <ul class="list-disc space-y-1 pl-4">
+                <template x-for="i in r.ingredients">
+                  <li>
+                    <span x-text="i"></span>
+                  </li>
+                </template>
+              </ul>
+              <h3 class="text-lg font-semibold">Steps</h3>
+              <ol class="list-decimal space-y-1 p-2 list-inside">
+                <template x-for="i in r.steps">
+                  <li>
+                    <span x-text="i"></span>
+                  </li>
+                </template>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </template>
+    </section>
+
+  </main>
+  <script type="module" src="/src/main.js"></script>
+  <script>
+    function recipes(){
+      return {
+        recipes: [
+          {
+            title: 'Incredibly Moist Brownies',
+            ingredients: [
+              "1/2 cup avocado oil (you can sub olive oil if desired)",
+              "3/4 cup granulated sugar",
+              "1/2 cup light brown sugar",
+              "3 large eggs",
+              "1/2 cup unsweetened cacao powder",
+              "1/2 cup all-purpose flour (you can sub 1:1 gluten-free flour)",
+              "2 teaspoons pure Madagascar vanilla extract"
+            ],
+            steps: [
+              "Preheat oven to 350F.",
+              "Add granulated sugar, brown sugar, and avocado oil in a mixing bowl. Mix until combined.",
+              "In a separate bowl, crack in the eggs and beat them for at least 30 seconds.",
+              "Add beaten eggs and vanilla extract to mixing bowl and combine with other ingredients",
+              "Add in the flour and cacao powder, and keep stirring just until all powders have combined. Avoid overmixing.",
+              "Place batter in an 8x8 square baking dish, and bake in oven for about 28 minutes.",
+              "Let brownie cool and solidify. It should still be a bit jiggly when it comes out.",
+              "Slice, serve and enjoy! I recommend heating the brownie individually before serving and topping with vanilla ice cream."
+            ]
+          }
+        ]
+      }
+    }
+    document.addEventListener('alpine:init', () => {
+      Alpine.store('darkMode', false)
+    })
+  </script>
+  </body>
+</html>
