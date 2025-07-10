@@ -127,7 +127,7 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
             </button>
             <div x-show="open === 1" x-collapse class="px-4 py-2 ">
               <h3 class="text-lg font-semibold">Ingredients</h3>
-              <ul class="list-disc space-y-1 pl-4">
+              <ul class="list-disc space-y-1 pl-4 text-sm">
                 <template x-for="i in r.ingredients">
                   <li>
                     <span x-text="i"></span>
@@ -135,7 +135,7 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
                 </template>
               </ul>
               <h3 class="text-lg font-semibold">Steps</h3>
-              <ol class="list-decimal space-y-1 p-2 list-inside">
+              <ol class="list-decimal space-y-1 p-2 list-inside text-sm">
                 <template x-for="i in r.steps">
                   <li>
                     <span x-text="i"></span>
@@ -185,8 +185,9 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
           {
             title: 'AI Integration',
             paragraphs: [
-                    `I've shipped several AI applications, including RAG chatbots, AI webscrapers, and AI-assisted
-        text editors.`,
+                    `I've created several AI applications, including a RAG chatbot, several AI webscrapers, and an AI-assisted
+        text editor. I primarily used LangChain Python with OpenAI and several integrations to build these applications,
+        and used Pinecone for projects that required storing vectorized data.`,
 
             ]
           },
