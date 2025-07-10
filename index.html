@@ -74,7 +74,7 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </button>
-          <div x-show="open === 1" x-collapse class="px-4 py-2 space-y-2">
+          <div x-show="open === 1" x-collapse class="py-2 space-y-2">
 
               <template x-for="p in subject.paragraphs">
 
@@ -95,19 +95,21 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
         <li class="underline"><a class="dark:text-cyan-500 text-cyan-600" href="https://github.com/cweiser22">Github</a></li>
       </ul>
     </section>
-    <section class="divide-y" x-data="{ experience: [
-        { title: 'Bacon Unlimited', dateRange: 'Nov 2022 - Dec 2024' },
-        { title: 'Data Crunch Corp', dateRange: 'Dec 2021 - Jun 2022' },
-        { title: 'Freelance', dateRange: 'Feb 2020 - Jan 2022' },
+    <section  x-data="{ experience: [
+        { title: 'Full-Stack @ Bacon Unlimited', dateRange: '2022 - 2024' },
+        { title: 'Full-Stack @ Data Crunch Corp', dateRange: '2021 - 2022' },
+        { title: 'Software Engineer @ Freelance', dateRange: '2020 - 2021' },
     ]}">
       <h2 class="text-xl font-bold my-2">Experience</h2>
+      <div class="divide-y divide-gray-200 dark:divide-gray-700">
       <template x-for="e in experience" :key="e.title">
         <div class="flex w-full justify-between items-center p-2 text-sm">
           <h4 x-text="e.dateRange"></h4>
 
-          <h3 class="font-semibold text-left w-52" x-text="e.title"></h3>
+          <h3 class="font-semibold text-left w-60" x-text="e.title"></h3>
 
         </div>
+      </div>
       </template>
     </section>
     <section x-data="recipes()" class="w-full">
