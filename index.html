@@ -41,7 +41,7 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
     </section>
 
     <section class="space-y-2">
-      <h2 class="text-xl font-bold">About Me</h2>
+      <h2 class="text-xl font-semibold">About Me</h2>
       <p class="text-sm">I grew up in Los Angeles, and have been interested in technology basically my entire life.
         I first learned how to program when I was 13 years old, starting out with simple toy programs and
         eventually gravitated towards web development. For the last few years, I've been working as a professional
@@ -51,65 +51,42 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
       </p>
     </section>
 
-    <section class="space-y-4">
-      <h2 class="text-xl font-bold">My Technical Background In-Depth</h2>
+
+    <section class="space-y-4" x-data="technicalBackground()">
+      <h2 class="text-xl font-semibold">My Technical Background</h2>
       <p class="text-sm">
-        I've worked with a wide variety of languages, libraries and frameworks over the past so many years. The
-        lion's share of my past work experience has been in full-stack engineering, but I've also dabbled in
-        mobile development, desktop app development, systems programming and blockchains.
+        I've worked with a wide variety of languages, libraries and frameworks throughout my career. The
+        lion's share of my past work experience has been in web, but I've also dabbled in
+        mobile development, desktop app development, systems programming and blockchains. As I've found it difficult
+        to fully convey my technical background in-depth on my resume, I've added some detailed explanations about
+        different parts of my skillset.
       </p>
 
-      <h3 class="text-lg font-semibold">Programming Languages</h3>
-      <p class="text-sm">
-        Python, Go, and JS/TS are by far my most used programming languages, but I'm also skilled with a few other
-        languages. While I've yet to substantially adopt it for my personal projects, I'm extremely interested in the Elixir/Erlang/OTP
-        ecosystem, and have a lot of respect for functional programming. I'm also a big fan of Rust, and have been gradually adopting it as my primary
-        language for systems programming.
-      </p>
+      <template x-for="subject in subjects">
+        <div x-data="{ open: null }">
+        <div class="">
+          <button
+                  @click="open === 1 ? open = null : open = 1"
+                  class="w-full flex justify-between items-center py-2 text-left text-sm font-semibold"
+          >
+            <span x-text="subject.title"></span>
+            <svg :class="{ 'rotate-180': open === 1 }" class="w-4 h-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div x-show="open === 1" x-collapse class="px-4 py-2 space-y-2">
 
-      <h3 class="text-lg font-semibold">Web Development</h3>
-      <p class="text-sm">
-        I've done a great deal of API development, and can confidently say that I know Django REST Framework
-        and FastAPI like the back of my hand. I have worked with nearly every major package in the Django ecosystem,
-        and have been using FastAPI professionally since the framework first rose to prominence. I also use Golang's
-        standard library extensively for backend projects, although I tend to add a few libraries I'm very fond of
-        (particularly <code class="">github.com/jmoiron/sqlx</code> and <code>github.com/go-chi/chi</code>). In the
-        past, I've also used Node.js frameworks, particularly Express.js and Nest.js.
-      </p>
+              <template x-for="p in subject.paragraphs">
 
-      <p class="text-sm">
-        While I lean more to the backend, I still do a pretty substantial amount of frontend work. My strongest
-        frontend framework is by far React, and I almost always use TypeScript for React projects that aren't trivial.
-        Currently, my preferred frontend stack is React + ShadCN + TypeScript + TanStack Query + Tanstack Router + Zustand
-        (if global state is needed). I've also shipped code in other frameworks, including a visual data dashboard
-        application with Angular and SyncFusion, a real-time Google Docs-style editor in Vue.js with Quasar, and this website,
-        which uses Alpine.js.
-      </p>
+                  <p class="text-sm"><span x-html="p"></span></p>
 
-      <h3 class="text-lg font-semibold">AI Integration</h3>
-      <p class="text-sm">
-        I've shipped several AI applications, including RAG chatbots, AI webscrapers, and AI-assisted
-        text
+              </template>
 
-      <h3 class="text-lg font-semibold">Infrastructure</h3>
-      <p class="text-sm">
-        In terms of databases, I'm generally biased in favor of relational databases, and have deep experience with
-        both MySQL and PostgreSQL. I usually choose PostgreSQL for new projects unless I have a compelling
-        reason not to, and opt for MongoDB for those edge cases where I legitimately need the flexibility
-        of a document store. Redis/Valkey is my preferred cache/KV store due to its simplicity, performance,
-        and built-in features for horizontal scaling, data streams, and geographic data. Furthermore, I've worked
-        on a few projects that involved embedded databases, specifically BoltDB and SQLite.
-      </p>
+          </div>
+        </div>
+        </div>
+      </template>
 
-      <h3 class="text-lg font-semibold">DevOps</h3>
-      <p class="text-sm">
-        I'm moderately comfortable handling DevOps, and consider myself an expert on Docker. Nearly every application
-        I've deployed in the last few years has been containerized. I've written advanced CI/CD pipelines to handle
-        server deployments, desktop application builds, and package signing. I've been using Linux since I was
-        in high school, and went through the stereotypical distro-hopping phase in my sophomore year. I've written
-        and deployed systemd services on several production Linux servers (mostly targeting Ubuntu, Debian, and RHEL),
-        and have set up build pipelines to create .rpm and .deb packages.
-      </p>
     </section>
     <section>
       <h2 class="text-xl font-bold">Links</h2>
@@ -174,6 +151,71 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
   </main>
   <script type="module" src="/src/main.js"></script>
   <script>
+
+    function technicalBackground(){
+      return {
+        subjects: [
+          {
+            title: 'Programming Languages',
+            paragraphs: [
+                    `Python, Go, and JS/TS are by far my most used programming languages, but I'm also skilled with a few other
+        languages. While I've yet to substantially adopt it for my personal projects, I'm extremely interested in the Elixir/Erlang/OTP
+        ecosystem, and have a lot of respect for functional programming. I'm also a big fan of Rust, and have been gradually adopting it as my primary
+        language for systems programming.`,
+
+            ]
+          },
+          {
+            title: 'Web Development',
+            paragraphs: [
+                    ` I've done a great deal of API development, and can confidently say that I know Django REST Framework
+        and FastAPI like the back of my hand. I have worked with nearly every major package in the Django ecosystem,
+        and have been using FastAPI professionally since the framework first rose to prominence. I also use Golang's
+        standard library extensively for backend projects, although I tend to add a few libraries I'm very fond of
+        (particularly <code class="">github.com/jmoiron/sqlx</code> and <code>github.com/go-chi/chi</code>). In the
+        past, I've also used Node.js frameworks, particularly Express.js and Nest.js.`,
+                    `While I lean more to the backend, I still do a pretty substantial amount of frontend work. My strongest
+        frontend framework is by far React, and I almost always use TypeScript for React projects that aren't trivial.
+        Currently, my preferred frontend stack is React + ShadCN + TypeScript + TanStack Query + Tanstack Router + Zustand
+        (if global state is needed). I've also shipped code in other frameworks, including a visual data dashboard
+        application with Angular and SyncFusion, a real-time Google Docs-style editor in Vue.js with Quasar, and this website,
+        which uses Alpine.js.`,
+            ]
+          },
+          {
+            title: 'AI Integration',
+            paragraphs: [
+                    `I've shipped several AI applications, including RAG chatbots, AI webscrapers, and AI-assisted
+        text editors.`,
+
+            ]
+          },
+          {
+            title: 'Databases',
+            paragraphs: [
+                    `In terms of databases, I'm generally biased in favor of relational databases, and have deep experience with
+        both MySQL and PostgreSQL. I usually choose PostgreSQL for new projects unless I have a compelling
+        reason not to, and opt for MongoDB for those edge cases where I legitimately need the flexibility
+        of a document store. Redis/Valkey is my preferred cache/KV store due to its simplicity, performance,
+        and built-in features for horizontal scaling, data streams, and geographic data. Furthermore, I've worked
+        on a few projects that involved embedded databases, specifically BoltDB and SQLite.`
+            ]
+          },
+          {
+            title: 'DevOps',
+            paragraphs: [
+                    `I'm moderately comfortable handling DevOps, and consider myself an expert on Docker. Nearly every application
+        I've deployed in the last few years has been containerized. I've written advanced CI/CD pipelines to handle
+        server deployments, desktop application builds, and package signing. I've been using Linux since I was
+        in high school, and went through the stereotypical distro-hopping phase in my sophomore year. I've written
+        and deployed systemd services on several production Linux servers (mostly targeting Ubuntu, Debian, and RHEL),
+        and have set up build pipelines to create .rpm and .deb packages.`
+            ]
+          }
+        ]
+      }
+    }
+
     function recipes(){
       return {
         recipes: [
