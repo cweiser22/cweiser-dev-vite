@@ -3,6 +3,6 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 body{
-    font-family: "Reddit Mono", monospace !important;
+    font-family: "TikTok Sans", monospace !important;
 }
 
