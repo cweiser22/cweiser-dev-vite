@@ -47,27 +47,27 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Reddit+Mono:wght@200..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&family=TikTok+Sans:opsz,wght@12..36,300..900&family=VT323&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Reddit+Mono:wght@200..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=TikTok+Sans:opsz,wght@12..36,300..900&family=VT323&display=swap" rel="stylesheet">
   </head>
-  <body class="dark:bg-gray-900 dark:text-white">
-  <header class="mx-auto max-w-xl p-8 flex flex-row item-center justify-center">
+  <body class="dark:bg-slate-900 dark:text-white">
+  <header class="mx-auto max-w-xl px-8 pt-8 flex flex-row item-center justify-center">
 
     <div>
     <h1 class="font-bold text-md">Cooper Weiser</h1>
     <h3 class="text-sm text-muted-foreground ">Calabasas, CA</h3>
     </div>
     <div class="flex-1"></div>
-    <div>
-      <button x-data @click="$store.darkMode = ! $store.darkMode" class="btn text-sm border-1 p-2 w-48">
+    <!--<div>
+      <button x-data @click="$store.darkMode = ! $store.darkMode" class="btn text-sm border-1 p-2 w-48 rounded-xs">
         <span x-text="$store.darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'"></span>
       </button>
-    </div>
+    </div>-->
   </header>
   <main x-data class="flex flex-col mx-auto max-w-xl space-y-8 p-8">
 
-
-
-    <hr class="w-full"/>
     <section class="space-y-2">
       <h2 class="font-bold text-md">About Me</h2>
       <p class="text-sm">
@@ -82,7 +82,7 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
       In my free time, I like to cook/bake, and I’m working on adding a few of my favorite recipes to this site. I’m also a strong advocate for online privacy, security, and internet freedom.</p>
       </p>
     </section>
-    <hr class="w-full"/>
+
     <section class="space-y-2">
       <h2 class="font-bold text-md">Primary Interests</h2>
       <ul class="text-sm list-disc ml-4">
@@ -93,16 +93,16 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
         <li>Blockchain Technology</li>
       </ul>
     </section>
-    <hr class="w-full"/>
 
-    <section class="space-y-4" x-data="technicalBackground()">
+
+    <section class="space-y-2" x-data="technicalBackground()">
       <h2 class="font-bold text-md">Master Skill List</h2>
-      <p class="text-sm">
+      <p class="text-sm mb-4">
         Complete list of all languages/technologies/platforms I've worked with.
       </p>
 
       <template x-for="subject in subjects">
-        <div x-data="{ open: null }">
+        <div x-data="{ open: null }" class="mb-2">
         <div class="">
           <button
                   @click="open === 1 ? open = null : open = 1"
@@ -127,21 +127,21 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
       </template>
 
     </section>
-    <hr class="w-full"/>
-    <section>
+
+    <section class="space-y-2">
       <h2 class="font-bold text-md">Links</h2>
       <ul class="list-disc space-y-1 text-sm px-4">
         <li class="underline"><a class="dark:text-blue-500 text-blue-600" href="https://linkedin.com/in/cweiser">LinkedIn</a></li>
         <li class="underline"><a class="dark:text-blue-500 text-blue-600" href="https://github.com/cweiser22">Github</a></li>
       </ul>
     </section>
-    <hr class="w-full"/>
+
     <section  x-data="{ experience: [
         { title: 'Full-Stack @ Bacon Unlimited', dateRange: '2022 - 2024' },
         { title: 'Full-Stack @ Data Crunch Corp', dateRange: '2021 - 2022' },
         { title: 'Software Engineer @ Freelance', dateRange: '2020 - 2021' },
-    ]}">
-      <h2 class="font-bold text-md my-2">Work History</h2>
+    ]}" class="space-y-2">
+      <h2 class="font-bold text-md">Work History</h2>
       <div class="divide-y divide-gray-200 dark:divide-gray-700">
       <template x-for="e in experience" :key="e.title">
         <div class="flex w-full justify-between items-center p-2 text-sm">
