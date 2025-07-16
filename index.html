@@ -52,7 +52,7 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
   <body class="dark:bg-gray-900 dark:text-white">
   <main x-data class="flex flex-col container mx-auto max-w-xl space-y-4 p-8">
     <button x-data @click="$store.darkMode = ! $store.darkMode" class="btn">
-      <strong x-text="$store.darkMode ? 'Dark' : 'Light'"></strong>
+      <strong x-text="$store.darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'"></strong>
     </button>
 
     <section>
@@ -91,11 +91,9 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
 
 
     <section class="space-y-4" x-data="technicalBackground()">
-      <h2 class="text-xl font-semibold">Master List of Skills</h2>
+      <h2 class="text-xl font-semibold">Master Skill List</h2>
       <p class="text-sm">
-        I've worked with a wide variety of languages, libraries and frameworks throughout my career. In order to keep
-        my resumes concise, I tend to shorten my skills list down to the most common/relevant technologies. For anyone
-        who's curious, however, here is a broad list of all languages, technologies, and platforms I've worked with.
+        Complete list of all languages/technologies/platforms I've worked with.
       </p>
 
       <template x-for="subject in subjects">
@@ -112,9 +110,9 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
           </button>
           <div x-show="open === 1" x-collapse class="py-2 space-y-2">
 
-              <template x-for="p in subject.paragraphs">
+              <template x-for="p in subject.items">
 
-                  <p class="text-sm"><span x-html="p"></span></p>
+                  <li class="text-sm"><span x-html="p"></span></li>
 
               </template>
 
@@ -195,62 +193,72 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
         subjects: [
           {
             title: 'Programming Languages',
-            paragraphs: [
-                    `Python, Go, and JS/TS are by far my most used programming languages, but I'm also skilled with a few other
-        languages. While I'm still new to it, I'm extremely interested in the Elixir/Erlang/OTP
-        ecosystem, and really enjoy the Phoenix web framework so far. I'm also a big fan of Rust, and have been gradually adopting it as my primary
-        language for systems programming.`,
-
+            items: [
+                    'Python',
+                    'Go',
+                    'JavaScript',
+                    'TypeScript',
+                    'Rust',
+                    'Elixir',
+                    'Dart',
+                    'Java',
+                    'C',
+                    'C++'
             ]
           },
           {
-            title: 'Web Development',
-            paragraphs: [
-                    ` I've done tons of API development, and can confidently say that I know Django REST Framework
-        and FastAPI like the back of my hand. I have worked with nearly every major package in the Django ecosystem,
-        and have been using FastAPI professionally since the framework first rose to prominence. I also use Golang's
-        standard library extensively for backend projects, although I tend to add a few libraries I'm very fond of
-        (particularly <code class="">github.com/jmoiron/sqlx</code> and <code>github.com/go-chi/chi</code>). In the
-        past, I've also used Node.js frameworks, particularly Express.js and Nest.js.`,
-                    `While I lean more to the backend, I still do a substantial amount of frontend work. I'm strongest
-                    with React, and I almost always use TypeScript for React projects that aren't trivial.
-        Currently, my favorite frontend stack is React + ShadCN + TypeScript + TanStack Query + Tanstack Router + Zustand
-        (if global state is needed). I've also shipped code in other frameworks, including a visual data dashboard
-        application with Angular and SyncFusion, a real-time Google Docs-style editor in Vue.js with Quasar, and this website,
-        which uses Alpine.js.`,
+            title: 'Frameworks/Libraries',
+            items: [
+                    'Django',
+                    'FastAPI',
+                    'Flask',
+                    'SQLAlchemy',
+                    'Pandas',
+                    'Numpy',
+                    'LangChain',
+                    'Express.js',
+                    'Nest.js',
+                    'Flutter',
+                    'Chi',
             ]
           },
           {
-            title: 'AI Integration',
-            paragraphs: [
-                    `I've created several AI applications, including a RAG chatbot, several AI webscrapers, and an AI-assisted
-        text editor. I primarily used LangChain Python with OpenAI and several integrations to build these applications,
-        and used Pinecone for projects that required storing vectorized data.`,
-
+            title: 'Databases/Stores',
+            items: [
+                    'PostgreSQL',
+                    'MySQL',
+                    'SQLite',
+                    'BoltDB',
+                    'MongoDB',
+                    'Redis',
+                    'Pinecone',
+                    'ChromaDB'
             ]
           },
           {
-            title: 'Databases',
-            paragraphs: [
-                    `In terms of databases, I'm generally biased in favor of relational databases, and have deep experience with
-        both MySQL and PostgreSQL. I usually choose PostgreSQL for new projects unless I have a compelling
-        reason not to, and opt for MongoDB for those edge cases where I legitimately need the flexibility
-        of a document store. Redis/Valkey is my preferred cache/KV store due to its simplicity, performance,
-        and built-in features for horizontal scaling, data streams, and geographic data. Furthermore, I've worked
-        on a few projects that involved embedded databases, specifically BoltDB and SQLite.`
+            title: 'Dev Tools/Infrastructure',
+            items: [
+                    'Docker',
+                    'Kubernetes',
+                    'Git',
+                    'Github Actions',
+                    'Bitbucket Pipelines',
+                    'GitLab Pipelines',
+                    'Jenkins',
+                    'Prometheus',
+                    'Grafana',
             ]
           },
           {
-            title: 'DevOps',
-            paragraphs: [
-                    `I'm a very strong advocate for containerization, and consider myself somewhat of an expert on
-                    Docker. I've written advanced CI/CD pipelines to handle
-        server deployments, desktop application builds, and package signing. I've been using Linux since I was
-        in high school, and went through the stereotypical distro-hopping phase in my sophomore year. I've written
-        and deployed systemd services on several production Linux servers (mostly targeting Ubuntu, Debian, and RHEL),
-        and have set up build pipelines to create .rpm and .deb packages.`
+            title: 'Platforms',
+            items: [
+              'AWS (IAM, S3, EC2, ECS, ECR, RDS, Lambda)',
+              'Azure (SQL, Container Service, Functions, Storage Accounts)',
+              'GCP (Google Kubernetes Engine, Cloud Domains)',
+              'Digital Ocean',
+              'Heroku',
             ]
-          }
+          },
         ]
       }
     }
