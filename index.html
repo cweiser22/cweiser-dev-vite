@@ -50,21 +50,18 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Reddit+Mono:wght@200..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=TikTok+Sans:opsz,wght@12..36,300..900&family=VT323&display=swap" rel="stylesheet">
   </head>
   <body class="dark:bg-gray-900 dark:text-white">
-  <main x-data class="flex flex-col container mx-auto max-w-xl space-y-4 p-8">
+  <main x-data class="flex flex-col container mx-auto max-w-xl space-y-8 p-8">
     <button x-data @click="$store.darkMode = ! $store.darkMode" class="btn">
       <strong x-text="$store.darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'"></strong>
     </button>
 
-    <section>
-      <h1 class="text-xl font-bold">Cooper Weiser</h1>
-      <h3 class="text-lg font-semibold text-muted-foreground dark:text-blue-500 text-blue-600">Calabasas, CA</h3>
-    </section>
-    <section>
-      <p class="text-sm">Welcome to Cooper Weiser's personal site!</p>
-    </section>
+    <header>
+      <h1 class="text-sm">Cooper Weiser</h1>
+      <h3 class="text-sm text-muted-foreground ">Calabasas, CA</h3>
+    </header>
 
     <section class="space-y-2">
-      <h2 class="text-xl font-semibold">About Me</h2>
+      <h2 class="text-sm">About Me</h2>
       <p class="text-sm">
         I’m a full-stack engineer based in Calabasas, just outside Los Angeles. Over the past few years, I’ve worked as a professional software engineer, mostly at fast-paced startups where adaptability and strong fundamentals matter.
 </p>
@@ -79,7 +76,7 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
     </section>
 
     <section class="space-y-2">
-      <h2 class="text-xl font-semibold">Primary Interests</h2>
+      <h2 class="text-sm">Primary Interests</h2>
       <ul class="text-sm list-disc ml-4">
         <li>Distributed Systems</li>
         <li>AI Integration</li>
@@ -91,7 +88,7 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
 
 
     <section class="space-y-4" x-data="technicalBackground()">
-      <h2 class="text-xl font-semibold">Master Skill List</h2>
+      <h2 class="text-sm">Master Skill List</h2>
       <p class="text-sm">
         Complete list of all languages/technologies/platforms I've worked with.
       </p>
@@ -101,7 +98,7 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
         <div class="">
           <button
                   @click="open === 1 ? open = null : open = 1"
-                  class="w-full flex justify-between items-center py-2 text-left text-sm font-semibold"
+                  class="w-full flex justify-between items-center text-left text-sm "
           >
             <span x-text="subject.title"></span>
             <svg :class="{ 'rotate-180': open === 1 }" class="w-4 h-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -123,8 +120,8 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
 
     </section>
     <section>
-      <h2 class="text-xl font-bold">Links</h2>
-      <ul class="list-disc space-y-1 pl-8 text-sm">
+      <h2 class="text-sm">Links</h2>
+      <ul class="list-disc space-y-1 text-sm px-4">
         <li class="underline"><a class="dark:text-blue-500 text-blue-600" href="https://linkedin.com/in/cweiser">LinkedIn</a></li>
         <li class="underline"><a class="dark:text-blue-500 text-blue-600" href="https://github.com/cweiser22">Github</a></li>
       </ul>
@@ -134,27 +131,27 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
         { title: 'Full-Stack @ Data Crunch Corp', dateRange: '2021 - 2022' },
         { title: 'Software Engineer @ Freelance', dateRange: '2020 - 2021' },
     ]}">
-      <h2 class="text-xl font-bold my-2">Experience</h2>
+      <h2 class="text-sm my-2">Experience</h2>
       <div class="divide-y divide-gray-200 dark:divide-gray-700">
       <template x-for="e in experience" :key="e.title">
         <div class="flex w-full justify-between items-center p-2 text-sm">
           <h4 x-text="e.dateRange"></h4>
 
-          <h3 class="font-semibold text-left w-60" x-text="e.title"></h3>
+          <h3 class="text-left w-60" x-text="e.title"></h3>
 
         </div>
       </div>
       </template>
     </section>
     <section x-data="recipes()" class="w-full">
-      <h3 class="text-xl font-bold my-2">Recipes</h3>
+      <h3 class="text-sm my-2">Recipes</h3>
       <template x-for="r in recipes" :key="r.title">
         <div x-data="{ open: null }" class="w-full space-y-2">
           <!-- Accordion Item 1 -->
           <div class="">
             <button
                     @click="open === 1 ? open = null : open = 1"
-                    class="w-full flex justify-between items-center py-2 text-left text-sm font-semibold"
+                    class="w-full flex justify-between items-center py-2 text-left text-sm"
             >
               <span x-text="r.title"></span>
               <svg :class="{ 'rotate-180': open === 1 }" class="w-4 h-4 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -162,7 +159,7 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
               </svg>
             </button>
             <div x-show="open === 1" x-collapse class="py-2 ">
-              <h3 class="text-md font-semibold">Ingredients</h3>
+              <h3 class="text-sm">Ingredients</h3>
               <ul class="list-disc space-y-1 p-2 text-sm ml-3">
                 <template x-for="i in r.ingredients">
                   <li>
@@ -170,7 +167,7 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
                   </li>
                 </template>
               </ul>
-              <h3 class="text-md font-semibold mt-4">Steps</h3>
+              <h3 class="text-sm mt-4">Steps</h3>
               <ol class="list-decimal space-y-1 p-2 list-inside text-sm">
                 <template x-for="i in r.steps">
                   <li>
@@ -185,6 +182,9 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
     </section>
 
   </main>
+  <footer class="flex flex-col container mx-auto max-w-xl space-y-4 p-8 text-sm">
+    Copyright @ Cooper Weiser 2025
+  </footer>
   <script type="module" src="/src/main.js"></script>
   <script>
 
