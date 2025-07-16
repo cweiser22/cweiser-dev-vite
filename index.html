@@ -45,8 +45,9 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&family=VT323&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Reddit+Mono:wght@200..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=TikTok+Sans:opsz,wght@12..36,300..900&family=VT323&display=swap" rel="stylesheet">
   </head>
   <body class="dark:bg-gray-900 dark:text-white">
   <main x-data class="flex flex-col container mx-auto max-w-xl space-y-4 p-8">
@@ -56,33 +57,45 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
 
     <section>
       <h1 class="text-xl font-bold">Cooper Weiser</h1>
-      <h3 class="text-lg font-semibold text-muted-foreground dark:text-cyan-500 text-cyan-600">Calabasas, CA</h3>
+      <h3 class="text-lg font-semibold text-muted-foreground dark:text-blue-500 text-blue-600">Calabasas, CA</h3>
     </section>
     <section>
-      <p class="text-sm">Welcome to my personal site! This is a where I put any important information about myself,
-        my skills, or my interests that doesn't really fit in well on my LinkedIn or resume.</p>
+      <p class="text-sm">Welcome to Cooper Weiser's personal site!</p>
     </section>
 
     <section class="space-y-2">
       <h2 class="text-xl font-semibold">About Me</h2>
-      <p class="text-sm">I grew up in Los Angeles, and have been interested in technology basically my entire life.
-        I first learned how to program when I was 13 years old, starting out with simple toy programs and
-        eventually gravitated towards web development. For the last few years, I've been working as a professional
-        software engineer, primarily at fast-paced startups. In my spare time, I enjoy cooking and baking, and
-        I'm working on gradually getting all my goto recipes up on this site. I currently live in Calabasas, just
-        outside Los Angeles. I'm a strong advocate for online privacy, security, and internet freedom.</p>
+      <p class="text-sm">
+        I’m a full-stack engineer based in Calabasas, just outside Los Angeles. Over the past few years, I’ve worked as a professional software engineer, mostly at fast-paced startups where adaptability and strong fundamentals matter.
+</p>
+
+      <p class="text-sm">
+      I grew up in the San Fernando Valley, and have been interested in technology my entire life. I started programming
+      when I was 13 years old, and have since turned it into a full-time career.
+
+      <p class="text-sm">
+      In my free time, I like to cook/bake, and I’m working on adding a few of my favorite recipes to this site. I’m also a strong advocate for online privacy, security, and internet freedom.</p>
       </p>
+    </section>
+
+    <section class="space-y-2">
+      <h2 class="text-xl font-semibold">Primary Interests</h2>
+      <ul class="text-sm list-disc ml-4">
+        <li>Distributed Systems</li>
+        <li>AI Integration</li>
+        <li>Product Engineering</li>
+        <li>OS/systems programming (particularly Linux)</li>
+        <li>Blockchain Technology</li>
+      </ul>
     </section>
 
 
     <section class="space-y-4" x-data="technicalBackground()">
-      <h2 class="text-xl font-semibold">My Technical Background</h2>
+      <h2 class="text-xl font-semibold">Master List of Skills</h2>
       <p class="text-sm">
-        I've worked with a wide variety of languages, libraries and frameworks throughout my career. The
-        lion's share of my past work experience has been in web, but I've also dabbled in
-        mobile development, desktop app development, systems programming and blockchains. As I've found it difficult
-        to fully convey my technical background in-depth on my resume, I've added some detailed explanations about
-        different parts of my skillset.
+        I've worked with a wide variety of languages, libraries and frameworks throughout my career. In order to keep
+        my resumes concise, I tend to shorten my skills list down to the most common/relevant technologies. For anyone
+        who's curious, however, here is a broad list of all languages, technologies, and platforms I've worked with.
       </p>
 
       <template x-for="subject in subjects">
@@ -114,8 +127,8 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
     <section>
       <h2 class="text-xl font-bold">Links</h2>
       <ul class="list-disc space-y-1 pl-8 text-sm">
-        <li class="underline"><a class="dark:text-cyan-500 text-cyan-600" href="https://linkedin.com/in/cweiser">LinkedIn</a></li>
-        <li class="underline"><a class="dark:text-cyan-500 text-cyan-600" href="https://github.com/cweiser22">Github</a></li>
+        <li class="underline"><a class="dark:text-blue-500 text-blue-600" href="https://linkedin.com/in/cweiser">LinkedIn</a></li>
+        <li class="underline"><a class="dark:text-blue-500 text-blue-600" href="https://github.com/cweiser22">Github</a></li>
       </ul>
     </section>
     <section  x-data="{ experience: [
