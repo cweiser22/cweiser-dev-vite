@@ -75,16 +75,12 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
 </p>
 
       <p class="text-sm">
-      I grew up in the San Fernando Valley, and have been interested in technology my entire life. I started programming
-      when I was 13 years old, and have since turned it into a full-time career.
-
-      <p class="text-sm">
-      In my free time, I like to cook/bake, and I’m working on adding a few of my favorite recipes to this site. I’m also a strong advocate for online privacy, security, and internet freedom.</p>
-      </p>
+      I grew up in the San Fernando Valley, and have been interested in technology my entire life.
+        I’m also a strong advocate for online privacy, security, and internet freedom.
     </section>
 
     <section class="space-y-2">
-      <h2 class="font-bold text-md">Primary Interests</h2>
+      <h2 class="font-bold text-md">Main Interests</h2>
       <ul class="text-sm list-disc ml-4">
         <li>Distributed Systems</li>
         <li>AI Integration</li>
@@ -96,7 +92,7 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
 
 
     <section class="space-y-2" x-data="technicalBackground()">
-      <h2 class="font-bold text-md">Master Skill List</h2>
+      <h2 class="font-bold text-md">Complete Skill List</h2>
       <p class="text-sm mb-4">
         Complete list of all languages/technologies/platforms I've worked with.
       </p>
@@ -133,31 +129,33 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
       <ul class="list-disc space-y-1 text-sm px-4">
         <li class="underline"><a class="dark:text-blue-500 text-blue-600" href="https://linkedin.com/in/cweiser">LinkedIn</a></li>
         <li class="underline"><a class="dark:text-blue-500 text-blue-600" href="https://github.com/cweiser22">Github</a></li>
+        <li class="underline"><a class="dark:text-blue-500 text-blue-600" href="https://urls.ac">Urls.ac</a></li>
       </ul>
     </section>
 
     <section  x-data="{ experience: [
-        { title: 'Full-Stack @ Bacon Unlimited', dateRange: '2022 - 2024' },
-        { title: 'Full-Stack @ Data Crunch Corp', dateRange: '2021 - 2022' },
+        { title: 'Full-Stack Engineer @ Bacon Unlimited', dateRange: '2022 - 2024' },
+        { title: 'Full-Stack Engineer @ Data Crunch Corp', dateRange: '2021 - 2022' },
         { title: 'Software Engineer @ Freelance', dateRange: '2020 - 2021' },
     ]}" class="space-y-2">
       <h2 class="font-bold text-md">Work History</h2>
       <div class="divide-y divide-gray-200 dark:divide-gray-700">
       <template x-for="e in experience" :key="e.title">
         <div class="flex w-full justify-between items-center p-2 text-sm">
-          <h4 x-text="e.dateRange"></h4>
+          <h4 x-text="e.dateRange" class="text-right"></h4>
 
-          <h3 class="text-left w-60" x-text="e.title"></h3>
+          <h3 class="w-64 text-right" x-text="e.title"></h3>
 
         </div>
       </div>
       </template>
     </section>
+    <!--
     <section x-data="recipes()" class="w-full">
       <h3 class="font-bold text-md my-2">Recipes</h3>
       <template x-for="r in recipes" :key="r.title">
         <div x-data="{ open: null }" class="w-full space-y-2">
-          <!-- Accordion Item 1 -->
+
           <div class="">
             <button
                     @click="open === 1 ? open = null : open = 1"
@@ -189,7 +187,7 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
           </div>
         </div>
       </template>
-    </section>
+    </section>-->
 
   </main>
   <footer class="flex flex-col container mx-auto max-w-xl space-y-4 p-8 text-xs">
@@ -277,7 +275,7 @@ based in Calabasas, CA who works with Python, Go, JavaScript, and TypeScript.">
       return {
         recipes: [
           {
-            title: 'My Favorite Brownies',
+            title: 'Brownies',
             ingredients: [
               "1/2 cup avocado oil (you can sub olive oil if desired)",
               "3/4 cup granulated sugar",
